@@ -167,7 +167,7 @@ export default function Home() {
             </motion.div>
 
             <motion.nav
-              className="flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5"
+              className="flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-5"
               variants={socialContainer}
             >
               {SOCIAL_LINKS.map(({ href, label, Icon, color, hover }) => (
