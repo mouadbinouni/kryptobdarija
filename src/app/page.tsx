@@ -9,11 +9,6 @@ import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 
-const DESCRIPTION =
-  "Krypto b Darija is a Moroccan project that teaches blockchain and crypto in simple Darija. All our content is purely educational, with no investment advice.";
-
-const DESCRIPTION_HEADING = "Inspiring confidence in Morocco’s digital future.";
-
 const SOCIAL_LINKS: Array<{
   href: string;
   label: string;
@@ -81,15 +76,6 @@ const fadeInUp: Variants = {
   },
 };
 
-const paragraphVariants: Variants = {
-  hidden: { opacity: 0, y: 18 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
 const socialContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -134,7 +120,7 @@ export default function Home() {
             variants={fadeInUp}
           >
             <motion.div
-              className="flex flex-col items-center gap-8 md:flex-row-reverse md:items-center md:justify-between md:gap-12"
+              className="flex flex-col items-center gap-8 md:gap-12"
               variants={fadeInUp}
             >
               <div className="flex w-full justify-center pt-2 md:basis-[340px] md:pt-4">
@@ -148,35 +134,17 @@ export default function Home() {
                 />
               </div>
 
-              <motion.section
-                className="flex w-full flex-col gap-4 md:max-w-2xl"
-                variants={fadeInUp}
-              >
-                <motion.h2
-                  className="text-left text-lg font-semibold text-slate-800 sm:text-xl"
-                  variants={fadeInUp}
-                >
-                  {DESCRIPTION_HEADING}
-                </motion.h2>
-                <motion.p
-                  lang="en"
-                  className="mx-auto text-pretty text-justify text-base leading-7 hyphens-auto text-slate-600 sm:text-lg md:mx-0 md:max-w-[58ch]"
-                  variants={paragraphVariants}
-                >
-                  {DESCRIPTION}
-                </motion.p>
-              </motion.section>
             </motion.div>
 
             <motion.p
-              className="text-center text-sm font-semibold uppercase tracking-wider text-slate-500"
+              className="mt-4 text-center text-sm font-semibold uppercase tracking-wider text-slate-500"
               variants={fadeInUp}
             >
               Follow us on
             </motion.p>
 
             <motion.nav
-              className="flex flex-row flex-wrap items-center justify-center gap-3 sm:gap-4"
+              className="flex flex-row items-center justify-center gap-3 sm:gap-4"
               variants={socialContainer}
             >
               {SOCIAL_LINKS.map(({ href, label, Icon, color, hover }) => (
@@ -205,26 +173,34 @@ export default function Home() {
         >
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(165,243,252,0.3),transparent_65%)]" />
           <div className="flex flex-col items-center gap-6 rounded-4xl bg-white/96 px-8 py-10 text-center backdrop-blur-md sm:flex-row sm:items-center sm:gap-10 sm:text-left">
-            <div className="relative flex shrink-0 items-center justify-center">
+            <div className="relative flex w-full justify-center pt-2 md:basis-[340px] md:pt-4">
               <Image
                 src="/profile.png"
                 alt="Mouad Bin Ouni portrait"
-                width={192}
-                height={192}
-                className="h-28 w-28 rounded-3xl object-cover shadow-lg ring-4 ring-white/80 sm:h-32 sm:w-32"
+                width={320}
+                height={320}
+                className="h-auto w-full max-w-[220px] sm:max-w-[260px] md:max-w-[320px]"
                 priority
               />
-              <span className="absolute -bottom-3 right-2 inline-flex items-center rounded-full bg-emerald-600 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-widest text-white shadow">
-                Founder
-              </span>
             </div>
             <div className="flex flex-col gap-3">
-              <h3 className="text-lg font-semibold text-slate-800 sm:text-xl">Mr BINOUNI Mouad</h3>
-              <p className="mx-auto text-left text-pretty text-sm leading-6 hyphens-auto text-slate-600 sm:text-base sm:leading-7 sm:max-w-[52ch] sm:text-justify">
-                I’m a blockchain and crypto consultant helping individuals and businesses understand crypto, security, and practical blockchain solutions.
-              </p>
+              <span className="mx-auto mt-2 inline-flex items-center rounded-full bg-emerald-600/90 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-white shadow-sm sm:mx-0">
+                Founder
+              </span>
+              <div className="text-center sm:text-left">
+                <h3 className="text-lg font-semibold text-slate-800 sm:text-xl">Mr BINOUNI Mouad</h3>
+                <p className="mt-1 text-sm font-medium uppercase tracking-[0.32em] text-slate-400 sm:text-xs">
+                  Blockchain and crypto consultant
+                </p>
+              </div>
+              <motion.p
+                className="mt-4 text-center text-sm font-semibold uppercase tracking-wider text-slate-500"
+                variants={fadeInUp}
+              >
+                Contact me
+              </motion.p>
               <motion.div
-                className="mt-4 flex items-center justify-center gap-3"
+                className="flex flex-row items-center justify-center gap-3 sm:gap-4"
                 variants={socialContainer}
               >
                 <motion.a
